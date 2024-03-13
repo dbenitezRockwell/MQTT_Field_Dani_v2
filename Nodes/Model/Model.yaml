@@ -1,0 +1,12 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- Name: RandomEn
+  Type: BaseDataVariableType
+  DataType: Boolean
+  Value: false
+- Name: SiteName
+  Type: BaseDataVariableType
+  DataType: String
+  Value: "Station1"
+- File: Tags2MQTT/Tags2MQTT.yaml

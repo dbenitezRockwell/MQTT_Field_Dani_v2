@@ -1,0 +1,227 @@
+Name: Alarms
+Type: AlarmsCategoryFolder
+Children:
+- Name: AnalogAlarmTBP
+  Id: g=0f793ebc01b89841089c95b3110c56ac
+  Supertype: ExclusiveLevelAlarmController
+  Description: {"LocaleId":"en-US","Text":"Analog Alarm To Be Published"}
+  Children:
+  - Class: Reference
+    Target: ns=15;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=83
+    Direction: Forward
+  - Name: InputValue
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+  - Name: LastEvent
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: AlarmPublisher
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: PublishMessage
+      Id: g=abfc1ccafcc10da0abd34d6f8ed8310e
+      Children:
+      - Name: ns=0;InputArguments
+        Type: BaseVariableType
+        DataType: Argument
+        ReferenceType: HasProperty
+        ModellingRule: None
+        ValueRank: OneDimension
+        ArrayDimensions: [0]
+        Value: [{"TypeId":{"Id":296},"Body":{"Name":"message","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+    - Name: BrokerIpAddress
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "LocalHost"
+    - Name: MqttAlarmClientUniqueName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HMIAlarm"
+    - Name: MqttAlarmLiveTopic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HmiAlarmLiveTopic"
+  - Class: Reference
+    Type: GeneratesEvent
+    Target: g=a6eb2bcbe6a67c29e6ecbc7d7203209c
+- Name: AnalogAlarmTBP1
+  Type: AnalogAlarmTBP
+  Children:
+  - Class: Reference
+    Target: ns=15;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=83
+    Direction: Forward
+  - Name: InputValue
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../Model/Tags2MQTT/Variable1"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: LastEvent
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: AlarmPublisher
+    Type: NetLogic
+    Children:
+    - Class: Reference
+      Target: g=abfc1ccafcc10da0abd34d6f8ed8310e
+      Direction: Forward
+    - Name: BrokerIpAddress
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "LocalHost"
+    - Name: MqttAlarmClientUniqueName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HMIAlarm"
+    - Name: MqttAlarmLiveTopic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HmiAlarmLiveTopic"
+  - Name: HighLimit
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 70.0
+  - Name: Message
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Variable1 High limit"}
+- Name: AnalogAlarmTBP2
+  Type: AnalogAlarmTBP
+  Children:
+  - Class: Reference
+    Target: ns=15;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=83
+    Direction: Forward
+  - Name: InputValue
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../Model/Tags2MQTT/Variable2"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: LastEvent
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: AlarmPublisher
+    Type: NetLogic
+    Children:
+    - Class: Reference
+      Target: g=abfc1ccafcc10da0abd34d6f8ed8310e
+      Direction: Forward
+    - Name: BrokerIpAddress
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "LocalHost"
+    - Name: MqttAlarmClientUniqueName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HMIAlarm"
+    - Name: MqttAlarmLiveTopic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HmiAlarmLiveTopic"
+  - Name: HighLimit
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 80.0
+  - Name: Message
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Variable2 High limit"}
+- Name: AnalogAlarmTBP3
+  Type: AnalogAlarmTBP
+  Children:
+  - Class: Reference
+    Target: ns=15;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=83
+    Direction: Forward
+  - Name: InputValue
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 0.0
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../Model/Tags2MQTT/Variable3"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: LastEvent
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: AlarmPublisher
+    Type: NetLogic
+    Children:
+    - Class: Reference
+      Target: g=abfc1ccafcc10da0abd34d6f8ed8310e
+      Direction: Forward
+    - Name: BrokerIpAddress
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "LocalHost"
+    - Name: MqttAlarmClientUniqueName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HMIAlarm"
+    - Name: MqttAlarmLiveTopic
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "HmiAlarmLiveTopic"
+  - Name: HighLimit
+    Type: BaseDataVariableType
+    DataType: Double
+    Value: 90.0
+  - Name: Message
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Variable3 High limit"}
